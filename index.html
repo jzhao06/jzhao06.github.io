@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teddy | Projects</title>
+  <title>Jay Zhao | Portfolio</title>
 
   <style>
     * {
@@ -66,6 +66,48 @@
       padding-left: 5px;
     }
 
+    /* PROJECT DROPDOWN */
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown-btn {
+      background: none;
+      border: none;
+      color: #bbb;
+      font-size: 1rem;
+      text-align: left;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dropdown-btn:hover {
+      color: white;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+      margin-left: 15px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-content a {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .dropdown-content a:hover {
+      color: white;
+    }
+
     .sidebar-footer {
       color: #666;
       font-size: 0.8rem;
@@ -82,8 +124,13 @@
     }
 
     /* PROJECTS */
-    #projects {
+    #technical-projects {
       min-height: 100vh;
+    }
+
+    #cad {
+      min-height: 100vh;
+      background: #eeeeee;
     }
 
     .section-label {
@@ -153,6 +200,11 @@
       text-decoration: underline;
     }
 
+    /* RESUME */
+    #resume {
+      background: white;
+    }
+
     /* ABOUT */
     #about {
       background: white;
@@ -200,7 +252,6 @@
       }
 
       .nav-links {
-        flex-direction: row;
         margin-top: 25px;
       }
 
@@ -214,6 +265,10 @@
 
       .section-title {
         font-size: 2.3rem;
+      }
+
+      .dropdown-content {
+        display: flex;
       }
     }
   </style>
@@ -231,16 +286,24 @@
       </p>
 
       <nav class="nav-links">
-        <a href="#projects">Technical Projects</a>
-        <a href="#resume">Resume </a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">Projects ▾</button>
+
+          <div class="dropdown-content">
+            <a href="#technical-projects">Technical Projects</a>
+            <a href="#cad">Computer-Aided Design</a>
+          </div>
+        </div>
+
+        <a href="#resume">Resume</a>
         <a href="#about">About Me</a>
-        <a href="#contact">Contact </a>
-        
+        <a href="#contact">Contact</a>
+
       </nav>
     </div>
 
     <div class="sidebar-footer">
-      
     </div>
 
   </aside>
@@ -248,17 +311,17 @@
 
   <main class="main">
 
-    <!-- PROJECTS -->
-    <section id="projects">
+    <!-- TECHNICAL PROJECTS -->
+    <section id="technical-projects">
 
       <p class="section-label">Portfolio</p>
 
       <h1 class="section-title">
-        Projects
+        Technical Projects
       </h1>
 
       <p class="section-intro">
-        A collection of engineering, software, and personal projects
+        A collection of academic and personal engineering projects
         I've worked on.
       </p>
 
@@ -272,7 +335,8 @@
 
           <p>
             Add a short description of your project here. Explain what
-            you built, why you built it, and what technologies you used.
+            you built, why you built it, and what technologies or tools
+            you used.
           </p>
 
           <a href="#">View Project →</a>
@@ -299,8 +363,8 @@
           <h2>Project Three</h2>
 
           <p>
-            You can add photos, GitHub links, reports, demos, or more
-            detailed project pages later.
+            Add information about the problem, your design process,
+            results, and what you learned.
           </p>
 
           <a href="#">View Project →</a>
@@ -313,7 +377,7 @@
           <h2>Coming Soon</h2>
 
           <p>
-            Add new projects here as you build them.
+            Add new technical projects here as you build them.
           </p>
 
           <a href="#">More Soon →</a>
@@ -322,16 +386,94 @@
       </div>
 
     </section>
+
+
+    <!-- COMPUTER-AIDED DESIGN -->
+    <section id="cad">
+
+      <p class="section-label">Design Portfolio</p>
+
+      <h1 class="section-title">
+        Computer-Aided Design
+      </h1>
+
+      <p class="section-intro">
+        A collection of CAD models, assemblies, engineering drawings,
+        and mechanical designs.
+      </p>
+
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <p class="project-number">01</p>
+
+          <h2>CAD Project One</h2>
+
+          <p>
+            Describe your CAD model or mechanical assembly here.
+            Include the software used, design goals, and any important
+            engineering considerations.
+          </p>
+
+          <a href="#">View Design →</a>
+        </div>
+
+
+        <div class="project-card">
+          <p class="project-number">02</p>
+
+          <h2>CAD Project Two</h2>
+
+          <p>
+            Add another SolidWorks, Fusion 360, AutoCAD, or other
+            computer-aided design project here.
+          </p>
+
+          <a href="#">View Design →</a>
+        </div>
+
+
+        <div class="project-card">
+          <p class="project-number">03</p>
+
+          <h2>CAD Project Three</h2>
+
+          <p>
+            Add an assembly, engineering drawing, simulation, or
+            manufacturing-focused design here.
+          </p>
+
+          <a href="#">View Design →</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESUME -->
     <section id="resume">
-      <h1 class="section-title">Resume</h1>
-    
-          <iframe
+
+      <p class="section-label">Experience</p>
+
+      <h1 class="section-title">
+        Resume
+      </h1>
+
+      <p>
+        Updated as of August 16th, 2026
+      </p>
+
+      <iframe
         src="Zhao Resume 8-13.pdf"
         width="100%"
         height="900px"
-        style="border: none;">
+        style="border: none; margin-top: 25px;">
       </iframe>
+
     </section>
+
 
     <!-- ABOUT -->
     <section id="about">
@@ -345,9 +487,9 @@
         </h1>
 
         <p>
-          Hi, I'm Teddy. I'm an engineering student at Boston University
-          interested in technology, design, and solving real-world
-          problems.
+          Hi, I'm Jay. I'm a mechanical engineering student at Boston
+          University interested in technology, design, and solving
+          real-world engineering problems.
         </p>
 
         <p>
@@ -368,9 +510,10 @@
     <!-- CONTACT -->
     <section id="contact">
 
+      <p class="section-label">Contact</p>
 
       <h1 class="section-title">
-        contact me!
+        Contact Me!
       </h1>
 
       <a
@@ -379,17 +522,16 @@
       >
         zhaoj06 [at] bu [dot] edu
       </a>
-        
-        <br>
-        
-       <a
-        class="contact-link"
-        href="www.linkedin.com/in/jzhaonys"
-      >
-        my LinkedIn
-      </a>
-      
 
+      <br>
+
+      <a
+        class="contact-link"
+        href="https://www.linkedin.com/in/jzhaonys"
+        target="_blank"
+      >
+        My LinkedIn
+      </a>
 
     </section>
 
