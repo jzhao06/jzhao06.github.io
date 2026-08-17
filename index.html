@@ -1,440 +1,388 @@
-<!DOCTYPE HTML>
-<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teddy | Projects</title>
 
--->
-<html>
-	<head>
-		<title>Jay Zhao</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>Jay Zhao</strong> <br />
-					<br />
+    html {
+      scroll-behavior: smooth;
+    }
 
-			</header>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #1f1f1f;
+    }
 
-		<!-- Main -->
-			<div id="main">
+    /* LEFT SIDEBAR */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: #111;
+      color: white;
+      padding: 50px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Engineering Portfolio<br />
-						
-							Mechanical Engineering @ Boston University</h2>
-							
-						</header>
-						<p>I’m a Mechanical Engineering student concentrating in the field of Aerospace Engineering at Boston University.
-						    <br>  
-						    <br>
-						    My past experience includes manufacturing enginerring at BD, a global medical device compan
-</p>
-						<ul class="actions">
+    .sidebar h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
 
-						</ul>
-					</section>
+    .sidebar .subtitle {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
 
-				<!-- Two -->
-					<section id="two">
-						<h2>Projects</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-				<!-- Three -->
-				
-								
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">zhaoj6 [at] bu [dot] edu</a>
-									</li>
-								
-							
-						
+    .nav-links a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .sidebar-footer {
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 250px;
+      min-height: 100vh;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    /* PROJECTS */
+    #projects {
+      min-height: 100vh;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: #666;
+      max-width: 650px;
+      margin-bottom: 50px;
+      line-height: 1.7;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      min-height: 240px;
+      border: 1px solid #ddd;
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-number {
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 35px;
+    }
+
+    .project-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .project-card a {
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ABOUT */
+    #about {
+      background: white;
+      min-height: 70vh;
+    }
+
+    .about-content {
+      max-width: 800px;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: #eaeaea;
+      min-height: 50vh;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #111;
+      padding-bottom: 3px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 25px;
+      }
+
+      .sidebar-footer {
+        display: none;
+      }
+
+      .nav-links {
+        flex-direction: row;
+        margin-top: 25px;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+
+    <div>
+      <h1>Jay Zhao</h1>
+
+      <p class="subtitle">
+        Mechanical Engineering @ Boston University
+      </p>
+
+      <nav class="nav-links">
+        <a href="#projects">Technical Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact </a>
+      </nav>
+    </div>
+
+    <div class="sidebar-footer">
+      © 2026 Teddy
+    </div>
+
+  </aside>
 
 
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
+  <main class="main">
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
+    <!-- PROJECTS -->
+    <section id="projects">
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+      <p class="section-label">Portfolio</p>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+      <h1 class="section-title">
+        Projects
+      </h1>
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+      <p class="section-intro">
+        A collection of engineering, software, and personal projects
+        I've worked on.
+      </p>
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+      <div class="project-grid">
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
+        <div class="project-card">
+          <p class="project-number">01</p>
 
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
+          <h2>Project One</h2>
 
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
+          <p>
+            Add a short description of your project here. Explain what
+            you built, why you built it, and what technologies you used.
+          </p>
 
-					</section>
-				-->
+          <a href="#">View Project →</a>
+        </div>
 
-			</div>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-					
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+        <div class="project-card">
+          <p class="project-number">02</p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+          <h2>Project Two</h2>
 
-	</body>
+          <p>
+            Describe another engineering, coding, research, or design
+            project here.
+          </p>
+
+          <a href="#">View Project →</a>
+        </div>
+
+
+        <div class="project-card">
+          <p class="project-number">03</p>
+
+          <h2>Project Three</h2>
+
+          <p>
+            You can add photos, GitHub links, reports, demos, or more
+            detailed project pages later.
+          </p>
+
+          <a href="#">View Project →</a>
+        </div>
+
+
+        <div class="project-card">
+          <p class="project-number">04</p>
+
+          <h2>Coming Soon</h2>
+
+          <p>
+            Add new projects here as you build them.
+          </p>
+
+          <a href="#">More Soon →</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <div class="about-content">
+
+        <p class="section-label">About</p>
+
+        <h1 class="section-title">
+          About Me
+        </h1>
+
+        <p>
+          Hi, I'm Teddy. I'm an engineering student at Boston University
+          interested in technology, design, and solving real-world
+          problems.
+        </p>
+
+        <p>
+          I enjoy building projects, learning new technologies, and
+          exploring the intersection between engineering and creativity.
+        </p>
+
+        <p>
+          This website is where I document some of the projects I've
+          worked on and the things I'm currently learning.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+
+      <h1 class="section-title">
+        contact me!
+      </h1>
+
+      <a
+        class="contact-link"
+        href="mailto:zhaoj06@bu.edu"
+      >
+        zhaoj06 [at] bu [dot] edu
+      </a>
+        
+        <br>
+        
+       <a
+        class="contact-link"
+        href="www.linkedin.com/in/jzhaonys"
+      >
+        my LinkedIn
+      </a>
+      
+
+
+    </section>
+
+  </main>
+
+</body>
 </html>
