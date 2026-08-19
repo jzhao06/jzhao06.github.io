@@ -1,0 +1,312 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #1f1f1f;
+      font-size: 1.2rem;
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: #1f1f1f;
+      color: white;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+/* size for big name */
+    .sidebar h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+/* this is the font for big name in corner */
+    .sidebar h1 a {
+      font-family: Avant Garde,sans-serif;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sidebar .subtitle {
+      color: #aaa;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 2rem;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    /* PROJECT DROPDOWN */
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropdown-btn {
+      background: none;
+      border: none;
+      color: #bbb;
+      font-size: 2rem;
+      text-align: left;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .dropdown-btn:hover {
+      color: white;
+    }
+
+    .dropdown-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 2px;
+      margin-left: 15px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-4px);
+      transition: max-height 0.3s ease, opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      max-height: 200px;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      font-size: 1.2rem;
+      color: #888;
+    }
+
+    .dropdown-content a:hover {
+      color: white;
+    }
+
+    .sidebar-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .sidebar-footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    .sidebar-footer a:hover {
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 250px;
+      min-height: 100vh;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    /* ENGINEERING PROJECTS */
+    .page-section {
+      min-height: 100vh;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      font-size: 1.7rem;
+      color: #666;
+      max-width: 900px;
+      margin-bottom: 50px;
+      line-height: 1.7;
+    }
+
+    /* RESUME */
+    #resume {
+      background: white;
+    }
+
+    /* ABOUT */
+    #about {
+      background: white;
+      min-height: 70vh;
+    }
+
+    .about-content {
+      max-width: 800px;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: #eaeaea;
+      min-height: 50vh;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #111;
+      padding-bottom: 3px;
+      transition: 0.2s ease;
+    }
+
+    .contact-link:hover {
+      opacity: 0.75;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 24px 18px;
+      }
+
+      .sidebar h1 {
+        font-size: 2.2rem;
+      }
+
+      .sidebar .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+      }
+
+      .nav-links a,
+      .dropdown-btn {
+        font-size: 1.05rem;
+      }
+
+      .dropdown-content a {
+        font-size: 0.95rem;
+      }
+
+      .sidebar-footer {
+        display: flex;
+        margin-top: 18px;
+      }
+
+      .nav-links {
+        margin-top: 20px;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .section-title {
+        font-size: 2.3rem;
+      }
+
+      .section-intro {
+        margin-bottom: 30px;
+      }
+
+      .dropdown-content {
+        display: flex;
+      }
+    }
+
+/* ACTIVE NAV */
+.nav-links a.active {
+  color: white;
+  font-weight: bold;
+}
+
+/* GENERAL PAGE CONTENT */
+.page-section {
+  min-height: 100vh;
+}
+
+.body-copy {
+  max-width: 800px;
+}
+
+.body-copy p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 900px;
+  border: none;
+  margin-top: 25px;
+}
