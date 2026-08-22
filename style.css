@@ -166,6 +166,8 @@
 
     .university-logo {
       height: 2em;
+      width: auto;
+      max-width: 100%;
       display: inline-block;
       margin: 0 4px;
       vertical-align: middle;
